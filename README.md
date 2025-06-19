@@ -57,3 +57,49 @@ python manage.py createsuperuser
 
 # 6. Start server
 python manage.py runserver
+```
+## Navigate to frontend
+```
+# 1. Navigate to frontend
+cd frontend
+
+# 2. Install dependencies
+npm install --legacy-peer-deps
+
+# 3. Start dev server
+npm start
+```
+BYD90/
+├── backend/         # Django project
+│   └── api/, users/, drills/, auth_api/
+├── frontend/        # React + Tailwind
+│   └── src/pages/, components/, services/
+├── README.md
+└── docker-compose.yml (coming soon)
+---
+✅ To-Do / Coming Soon
+Booking system (players ↔ coaches)
+
+Drill filtering + video previews
+
+Stripe or PayPal integration for session payments
+
+Profile photo uploads
+
+Mobile version (React Native)
+---
+🤝 Contributing
+This is a solo project in active development. If you want to help or follow along, feel free to fork, clone, and build.
+---
+📫 Contact
+Made by Samuel Obembe
+
+GitHub: @sxmmy
+
+Instagram: @beyondninety
+
+Email: sam@beyondninety.com (coming soon)
+---
+© 2025 Samuel Obembe. All rights reserved.  
+BYD90 is a proprietary platform and may not be copied or reused without written permission.
+
