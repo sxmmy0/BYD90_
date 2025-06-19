@@ -69,13 +69,6 @@ npm install --legacy-peer-deps
 # 3. Start dev server
 npm start
 ```
-BYD90/
-├── backend/         # Django project
-│   └── api/, users/, drills/, auth_api/
-├── frontend/        # React + Tailwind
-│   └── src/pages/, components/, services/
-├── README.md
-└── docker-compose.yml (coming soon)
 ---
 ✅ To-Do / Coming Soon
 Booking system (players ↔ coaches)
