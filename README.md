@@ -81,9 +81,6 @@ Profile photo uploads
 
 Mobile version (React Native)
 ---
-🤝 Contributing
-This is a solo project in active development. If you want to help or follow along, feel free to fork, clone, and build.
----
 📫 Contact
 Made by Samuel Obembe
 
