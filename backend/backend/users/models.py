@@ -2,22 +2,25 @@ from django.contrib.auth.models import User
 from django.db import models
 
 class UserProfile(models.Model):
-    USER_LEVELS = [
-        ('Beginner', 'Beginner'),
-        ('Intermediate', 'Intermediate'),
-        ('Advanced', 'Advanced'),
-        ('Semi-Pro', 'Semi-Pro'),
-        ('Pro', 'Pro'),
+    ROLE_CHOICES = [
+        ('player', 'Player'),
+        ('coach', 'Coach'),
+    ]
+    POSITION_CHOICES = [
+        ('Striker', 'Striker'),
+        ('Winger', 'Winger'),
+        ('Midfielder', 'Midfielder'),
+        ('Defender', 'Defender'),
+        ('Goalkeeper', 'Goalkeeper'),
     ]
 
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    location = models.CharField(max_length=100, blank=True)
-    profile_picture = models.ImageField(upload_to='profile_pics/', blank=True, null=True)
+    role = models.CharField(max_length=10, choices=ROLE_CHOICES)
     bio = models.TextField(blank=True)
-    playing_level = models.CharField(max_length=20, choices=USER_LEVELS, blank=True)
-    languages = models.CharField(max_length=100, blank=True)
+    location = models.CharField(max_length=100, blank=True)
+    playing_position = models.CharField(max_length=20, choices=POSITION_CHOICES, blank=True)
     team_supported = models.CharField(max_length=100, blank=True)
     team_played_for = models.CharField(max_length=100, blank=True)
+    coaching_style = models.TextField(blank=True)
+    coaching_focus = models.CharField(max_length=200, blank=True)  # e.g. “Wingers, Recovery, Finishing”
 
-    def __str__(self):
-        return self.user.username

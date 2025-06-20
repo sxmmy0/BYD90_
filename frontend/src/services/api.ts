@@ -13,3 +13,8 @@ API.interceptors.request.use((req) => {
 });
 
 export default API;
+
+export const fetchProfile = async () => {
+  const res = await API.get('auth/profile/');
+  return res.data;
+};
