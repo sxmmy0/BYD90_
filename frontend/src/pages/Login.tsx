@@ -1,10 +1,12 @@
 import { useState } from 'react';
 import API from '../services/api';
 import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../context/AuthContext'; // <-- import
 
 export default function Login() {
   const [form, setForm] = useState({ username: '', password: '' });
   const navigate = useNavigate();
+  const { setRole } = useAuth(); // <-- use context
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -21,6 +23,7 @@ export default function Login() {
       // Fetch user profile with token
       const profileRes = await API.get<{ role: string }>('auth/profile/');
       const role = profileRes.data.role;
+      setRole(role); // <-- update context
 
       // Redirect based on role
       if (role === 'coach') {

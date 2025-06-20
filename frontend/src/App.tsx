@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import Dashboard from './pages/Dashboard';
@@ -13,7 +13,7 @@ import Logout from './pages/Logout';
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <>
       <NavBar />
       <Routes>
         <Route path="/login" element={<Login />} />
@@ -26,6 +26,7 @@ export default function App() {
         <Route path="/player-dashboard" element={<PlayerDashboard />} />
         <Route path="/logout" element={<Logout />} />
       </Routes>
-    </BrowserRouter>
+    </>
   );
 }
+
